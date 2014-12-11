@@ -6,12 +6,11 @@ from pylab import *
 
 
 def plot_Degree(dataframe):
-    """plot the percent of job that needed a degree"""
+    """plot a pie that shows the proportion of jobs that need a specific level of education degree"""
     degree=degreeDict(dataframe)
     bach=degree['Bachelor']
     master=degree['Master']
     others=degree['High School or others non-degree']
-    
     # make a square figure and axes
     figure(2, figsize=(6,6))
     ax = axes([0.1, 0.1, 0.8,0.8])
