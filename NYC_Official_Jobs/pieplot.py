@@ -1,8 +1,5 @@
 from jobDescription import degreeDict
-import matplotlib.pyplot as plt
 from pylab import *
-
-
 
 
 def plot_Degree(dataframe):
