@@ -1,30 +1,29 @@
-from matplotlib.pylab import *
+import  matplotlib.pyplot as plt
+
+def plot_educationLevel(df):
 
 
-def plot_Degree(dataframe):
-    """plot a pie that shows the proportion of jobs that need a specific level of education degree"""
-    degree = degreeDict(dataframe)
-    bach = degree['Bachelor']
-    master = degree['Master']
-    others = degree['High School or others non-degree']
-    # make a square figure and axes
-    figure(2, figsize=(6, 6))
-    ax = axes([0.1, 0.1, 0.8, 0.8])
-    # The slices will be ordered and plotted counter-clockwise.
+    degree=degreeDict(df)
+    bach=degree['Bachelor']
+    master=degree['Master']
+    others=degree['High School or others non-degree']
     labels = 'At least \n a Bachelor degree', 'At least\n   A Master \n degree','Others:\nHigh school \nDiploma or \nSome experiences '
     fracs = [bach, master, others]
+    plt.figure(figsize=(12,12))
     explode = (0.05, 0.05, 0.05)
-    pie(fracs, explode=explode, labels=labels, autopct='%1.1f%%', shadow=True, startangle=90)
-    title('Minimum Degree Requirement', bbox={'facecolor': '1.0', 'pad': 5})
-    show()
-
+    colors = ['yellowgreen', 'gold', 'lightskyblue', 'lightcoral']
+    plt.pie(fracs,explode=explode, colors=colors, autopct='%1.1f%%', shadow=True, startangle=90)
+    plt.axis('equal')
+    plt.legend(labels,loc="lower right")
+    plt.title('Minimum Degree Requirement', fontsize=20)
+    plt.show()
 
 def degreeDict(dataframe):
     """
     takes the dataframe as input,
     returns a dictionary  with key: Degree,  Values: total number of available jobs
     """
-    #print df.dtypes
+
     df=dataframe.set_index('Job ID')                        #set the Job ID be the index of dataframe
     df1=df['Minimum Qual Requirements'].dropna()            #remove null value
     position= df['# Of Positions']

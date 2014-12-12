@@ -5,7 +5,8 @@ from input_filter import filter_the_job
 from map_of_location import plot_the_location_map, plot_one_job_location
 from jobDescription import show_job_infomation_s,show_job_infomation_df
 from exception_list import invalid_ID_Exception
-
+from Dataloading import Clean_df
+from display_preferred_skills import display_preferred_skill
 
 class interested_job_list(Job_data):
 
@@ -29,8 +30,12 @@ class interested_job_list(Job_data):
         show_job_infomation_df(self.data)
 
     def _verify(self, job_id):
-        if not(job_id in  self.data.loc[:,'Job ID'].values):
+        if not(job_id in  self.data.loc[:, 'Job ID'].values):
             raise invalid_ID_Exception
+
+    def high_demand_skill(self):
+        skill_list = display_preferred_skill(self.data)
+        return skill_list
 
     def select(self, job_id):
         self._verify(job_id)            # if invalid, raise an exception
@@ -59,15 +64,15 @@ class job:
 
 def test_class():
     df = pd.read_csv("../NYC_Jobs.csv")
-    keyword = 'manager'
+    df = Clean_df(df)
+    keyword = 'data'
     job_list = filter_the_job(df,keyword)
     job_list = interested_job_list(job_list,keyword)
-    print job_list
-    job_list.map_of_locations(30)
-    id= 170881
-    job_i = job_list.select(id)
-    print job_i
-    job_i.location()
+    job_list.degree_pie_plot()
+#    id= 170881
+#    job_i = job_list.select(id)
+#    print job_i
+#    job_i.location()
 
 
 if __name__ == "__main__":
