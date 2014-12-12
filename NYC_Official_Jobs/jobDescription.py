@@ -1,6 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-
+from Dataloading import Clean_df
 
 def show_job_info(jobID,kwd,df):
     """
@@ -48,8 +48,15 @@ def degreeDict(dataframe):
 
 
 
+def test():
+     df = pd.read_csv("../NYC_Jobs.csv")
+     df = Clean_df(df)
+     degree = degreeDict(df)
+     print degree
 
 
+if __name__ == "__main__":
+    test()
     
     
     

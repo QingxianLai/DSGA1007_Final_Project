@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 from pieplot import plot_Degree
 from barplot import *
 from input_filter import filter_the_job
+from Dataloading import Clean_df
 
 class Job_data:
 
@@ -39,8 +40,12 @@ class Job_data:
 
 def class_test():
     df = pd.read_csv("../NYC_Jobs.csv")
+    df = Clean_df(df)
     nyc_job_data = Job_data(df)
-#    nyc_job_data.degree_pie_plot()
+    nyc_job_data.degree_pie_plot()
+    nyc_job_data.top_demanding_jobs()
+    nyc_job_data.top_ten_agency()
+    nyc_job_data.num_of_job_by_date()
     nyc_job_data.preview_data()
 #    keyword = 'manager'
 #    job_list = filter_the_job(df, keyword)
