@@ -6,7 +6,7 @@ from map_of_location import plot_the_location_map, plot_one_job_location
 from jobDescription import show_job_infomation_s,show_job_infomation_df
 from exception_list import invalid_ID_Exception
 from Dataloading import Clean_df
-from display_preferred_skills import display_preferred_skill
+from display_preferred_skill import display_preferred_skill
 
 class interested_job_list(Job_data):
 

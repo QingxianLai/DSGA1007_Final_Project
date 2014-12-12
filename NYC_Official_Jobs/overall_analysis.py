@@ -3,6 +3,9 @@ import sys
 from exception_list import *
 from Job_list_overall import Job_data
 from input_filter import filter_the_job
+import pandas as pd
+from Dataloading import Clean_df
+
 
 def overall_analysis(df):
     """
@@ -11,7 +14,7 @@ def overall_analysis(df):
     :return:
     """
 
-    df_obj = Job_data(df)
+    df = Job_data(df)
 
     print "=================  NYC Official Job Analysis  =============================="
     print ""
@@ -29,9 +32,28 @@ def overall_analysis(df):
 
 
     while 1:
-        option = option_input()
-        operation(df_obj,option)
-
+        try:
+            key = option_input()
+            if key == 'a':
+                df.degree_pie_plot()
+            if key == 'b':
+                df.top_ten_agency()
+            if key == 'c':
+                df.top_demanding_jobs()
+            if key == 'd':
+                df.num_of_job_by_date()
+            if key == 'e':
+                pass
+            if key == 'f':
+                df.preview_data()
+            if key == 'g':
+                job_list = search_keyword(df.data)
+                break
+        except wrong_option_exception:
+            print "invalid option, please select from [a,b,c,d,e,f,g] or input 'q' to quit: "
+        except no_related_jobs_exception:
+            print "Sorry, we cannot find jobs related to your keyword, please try another one: "
+    return job_list
 
 
 def option_input():
@@ -44,28 +66,21 @@ def option_input():
         sys.exit()
     return key
 
-def operation(df,key):
-    if key == 'a':
-        df.degree_pie_plot()
-    if key == 'b':
-        df.top_ten_agency()
-    if key == 'c':
-        df.top_demanding_jobs()
-    if key == 'd':
-        df.num_of_job_by_date()
-    if key == 'e':
-        pass
-    if key == 'f':
-        df.preview_data()
-    if key == 'g':
-        seach_keyword(df.data)
-        break
 
 def search_keyword(df):
     keyword = raw_input("please input a keyword of the job you interested in: \n")
     job_list = filter_the_job(df, keyword)
     if len(job_list) == 0:
         raise no_related_jobs_exception
+    return job_list
 
 
+def test():
+    df = pd.read_csv("../NYC_Jobs.csv")
+    df = Clean_df(df)
+    job_list = overall_analysis(df)
+    print job_list
 
+
+if __name__ == "__main__":
+    test()
