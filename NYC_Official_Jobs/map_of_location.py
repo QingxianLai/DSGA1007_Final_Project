@@ -12,20 +12,20 @@ from PIL import Image
 import urllib
 
 
-def plot_the_location_map(df,geo_map,num):
-    df = df[['Job ID','Business Title']]
-    
+def plot_the_location_map(df, num, keyword):
+    df = df[['Job ID', 'Business Title']]
+    geo_map = pd.read_csv('id_geo_location.csv', index_col='Job ID')
+
     #===========marker======================================================
     # size:  {tiny, mid, small} 
     # color: {black, brown, green, purple, yellow, blue, gray, orange, red, white} 
-        
     marker_start = "markers=color:red"
     marker = marker_start
     for i in range(num):
-        job_id = df.iloc[i,0]
-        lat = geo_map.loc[job_id,'lat']
-        lng = geo_map.loc[job_id,'lng']
-        marker = marker+"%7C{},{}".format(lat,lng)     
+        job_id = df.iloc[i, 0]
+        lat = geo_map.loc[job_id, 'lat']
+        lng = geo_map.loc[job_id, 'lng']
+        marker = marker+"%7C{},{}".format(lat, lng)
     
     #==========parameters======================================================
     url_start = "http://maps.googleapis.com/maps/api/staticmap?"
@@ -34,24 +34,56 @@ def plot_the_location_map(df,geo_map,num):
     size = "size=800x800"
     zoom = "zoom=11"
     sensor = "sensor=false"    
-    maptype = "maptype=terrain"  #satellite ; terrain
+    maptype = "maptype=terrain"  # satellite ; terrain
     c = '&'
     url = url_start+center_point+c+size+c+zoom+c+marker+c+maptype+c+sensor
 
     #=======plot================================================================   
-    buffer = StringIO(urllib.urlopen(url).read())
-    image = Image.open(buffer)
-    image.save('location_map.png')
+    buffered = StringIO(urllib.urlopen(url).read())
+    image = Image.open(buffered)
+    image.save('location_map_of_keyword_{}.png'.format(keyword))
+
+
+def plot_one_job_location(job_id):
+    geo_map = pd.read_csv('id_geo_location.csv', index_col='Job ID')
+
+    #===========marker======================================================
+    # size:  {tiny, mid, small}
+    # color: {black, brown, green, purple, yellow, blue, gray, orange, red, white}
+    marker_start = "markers=color:red"
+    marker = marker_start
+
+    lat = geo_map.loc[job_id, 'lat']
+    lng = geo_map.loc[job_id, 'lng']
+    marker = marker+"%7C{},{}".format(lat, lng)
+
+    #==========parameters======================================================
+    url_start = "http://maps.googleapis.com/maps/api/staticmap?"
+    center_point = "center=%4.5f,%4.5f" % (lat, lng)
+    size = "size=800x800"
+    zoom = "zoom=14"
+    sensor = "sensor=false"
+    maptype = "maptype=terrain"
+    c = '&'
+    url = url_start+center_point+c+size+c+zoom+c+marker+c+maptype+c+sensor
+
+    #=======plot================================================================
+    buffered = StringIO(urllib.urlopen(url).read())
+    image = Image.open(buffered)
+    image.save('location_map_of_jobId{}.png'.format(str(job_id)))
 
 
 def main():
     df = pd.read_csv("NYC_Jobs.csv")
     keyword = 'manager'
-    job_list = filter_the_job(df,keyword)
-    id_geo_map = pd.read_csv('id_geo_location.csv',index_col='Job ID')
-    num=79       # maximum : 79
-    plot_the_location_map(job_list,id_geo_map,num)
-    print "hello world"
+    job_list = filter_the_job(df, keyword)
+
+    num = 79       # maximum : 79
+    plot_the_location_map(job_list, num, keyword)
+
+    d = df.columns.get_loc('Job ID')
+    job_id = job_list.iloc[3, d]
+    plot_one_job_location(job_id)
     
-if __name__=="__main__":
+if __name__ == "__main__":
     main()

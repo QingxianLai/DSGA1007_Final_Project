@@ -49,7 +49,6 @@ def show_salary_range(kwd,df):
     takes the kwd(keyword), df(dataframe) as input and 
     plots the salary range of full-time positions
     """
-    #df1=filter_the_job(df,kwd)
     df=df[df['Salary Frequency']=='Annual']#limited to full-time positions
     df=df[['Business Title','Salary Range From','Salary Range To']]#extract the columns we needed
     salary=df.sort_index(by=['Salary Range From','Salary Range To'])
