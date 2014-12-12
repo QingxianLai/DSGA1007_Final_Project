@@ -41,6 +41,7 @@ def plot_the_location_map(df, num, keyword):
     #=======plot================================================================   
     buffered = StringIO(urllib.urlopen(url).read())
     image = Image.open(buffered)
+    image.show()
     image.save('location_map_of_keyword_{}.png'.format(keyword))
 
 
@@ -70,6 +71,7 @@ def plot_one_job_location(job_id):
     #=======plot================================================================
     buffered = StringIO(urllib.urlopen(url).read())
     image = Image.open(buffered)
+    image.show()
     image.save('location_map_of_jobId{}.png'.format(str(job_id)))
 
 

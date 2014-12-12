@@ -3,6 +3,8 @@ import pandas as pd
 from Job_list_overall import Job_data
 from input_filter import filter_the_job
 from map_of_location import plot_the_location_map, plot_one_job_location
+from jobDescription import show_job_infomation_s,show_job_infomation_df
+from exception_list import invalid_ID_Exception
 
 
 class interested_job_list(Job_data):
@@ -23,11 +25,15 @@ class interested_job_list(Job_data):
             n = len(self.data)
         print self.data.iloc[:n, :]
 
+    def show_job_list(self):
+        show_job_infomation_df(self.data)
+
     def _verify(self, job_id):
-        pass              #TODO: write this funciton
+        if not(job_id in  self.data.loc[:,'Job ID'].values):
+            raise invalid_ID_Exception
 
     def select(self, job_id):
-        self._verify(job_id)       #TODO: write this function
+        self._verify(job_id)            # if invalid, raise an exception
         selected_job = self.data[self.data['Job ID']==job_id].iloc[0,:]
         return job(selected_job)
 
@@ -37,12 +43,12 @@ class interested_job_list(Job_data):
 
 class job:
     def __init__(self,job):
-        self.data = job    # job should be a pandas Series with attributes as its index
+        self.data = job                 # job should be a pandas Series with attributes as its index
         self.id = job['Job ID']
         self.title = job['Business Title']
 
     def description(self):
-        pass     #TODO: write a job description function based one job Series
+        show_job_infomation_s(self.data)
 
     def location(self):
         plot_one_job_location(self.id)
