@@ -55,7 +55,7 @@ def job_list_analysis(df,kwd):
 
 def print_list_operator(kwd):
     print ""
-    print "================================  keyword:{}  ==============================".format(kwd)
+    print "================================  keyword:{}  =========================================".format(kwd)
     print ""
     print "                 You can choose to learn more about this job list: "
     print "              <m>  :  draw a map to show all the job location"
@@ -81,7 +81,7 @@ def option_input():
     return a verified option
 
     """
-    key = raw_input("your_choose: ")
+    key = raw_input("your_choice: ")
     options = list('mabcdefgq')
     if not(key in options):
         raise wrong_option_exception
@@ -121,7 +121,7 @@ def view_job_info(Job):
     print "successfully select job: {}".format(Job.id)
 
     print ""
-    print "================================  jb ID:{}  ==============================".format(Job.id)
+    print "================================  jb ID:{}  ==========================================".format(Job.id)
     print ""
     print "                 You can choose to learn more about this job: "
     print "              <a>  :  show the detailed information"
@@ -153,7 +153,7 @@ def job_key_input():
     return a verified option
 
     """
-    key = raw_input("your_choose: ")
+    key = raw_input("your_choice: ")
     options = list('abq')
     if not(key in options):
         raise wrong_option_exception

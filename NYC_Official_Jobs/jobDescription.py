@@ -4,8 +4,10 @@ import re
 
 
 def show_job_infomation_df(df):
-    job_features=['Job ID','Business Title','Agency']
-    print df.loc[:,job_features]
+    job_features = ['Job ID', 'Business Title', 'Agency']
+    df2 = df.loc[:, job_features]
+    df3 = df2.set_index('Job ID')
+    print df3
 
 def show_job_infomation_s(series):
     for i in list(series.index)[:13]:

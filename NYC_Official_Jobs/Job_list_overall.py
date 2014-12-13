@@ -12,8 +12,8 @@ class Job_data:
 
     Local Variable
     ==============
-    .data  :  a dataframe contain all the information of NYC Jobs
-    .
+    data  :  a dataframe contain all the information of NYC Jobs
+    
 
     """
 
@@ -52,8 +52,10 @@ class Job_data:
     def __repr__(self):
         return "NYC_OFFICIAL_JOB_DATASET Object"
 
-    def corralation_level_salary(self):
-        pass  # TODO: write this function
+
+
+
+
 
 
 def class_test():

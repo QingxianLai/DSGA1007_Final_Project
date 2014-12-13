@@ -44,11 +44,10 @@ def plot_the_location_map(df, num, keyword):
     buffered = StringIO(urllib.urlopen(url).read())
     image = Image.open(buffered)
     image.show()
-    image.save('location_map_of_keyword_{}.png'.format(keyword))
 
 
 def plot_one_job_location(job_id):
-    geo_map = pd.read_csv('id_geo_location.csv', index_col='Job ID')
+    geo_map = pd.read_csv('NYC_Official_Jobs/id_geo_location.csv', index_col='Job ID')
 
     #===========marker======================================================
     # size:  {tiny, mid, small}
@@ -74,7 +73,6 @@ def plot_one_job_location(job_id):
     buffered = StringIO(urllib.urlopen(url).read())
     image = Image.open(buffered)
     image.show()
-    image.save('location_map_of_jobId{}.png'.format(str(job_id)))
 
 
 def main():

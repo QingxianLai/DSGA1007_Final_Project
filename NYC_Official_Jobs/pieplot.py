@@ -1,4 +1,4 @@
-import  matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 
 def plot_educationLevel(df):
 
@@ -9,7 +9,7 @@ def plot_educationLevel(df):
     others=degree['High School or others non-degree']
     labels = 'At least \n a Bachelor degree', 'At least\n   A Master \n degree','Others:\nHigh school \nDiploma or \nSome experiences '
     fracs = [bach, master, others]
-    plt.figure(figsize=(12,12))
+    plt.figure(figsize=(9,9))
     explode = (0.05, 0.05, 0.05)
     colors = ['yellowgreen', 'gold', 'lightskyblue', 'lightcoral']
     plt.pie(fracs,explode=explode, colors=colors, autopct='%1.1f%%', shadow=True, startangle=90)

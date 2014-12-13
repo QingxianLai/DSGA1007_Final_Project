@@ -74,7 +74,7 @@ def option_input():
     return a verified option
 
     """
-    key = raw_input("your_choose: ")
+    key = raw_input("your_choice: ")
     options = list('abcdefgq')
     if not(key in options):
         raise wrong_option_exception
