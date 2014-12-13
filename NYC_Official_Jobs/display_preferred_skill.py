@@ -15,7 +15,7 @@ def display_preferred_skill(df):
     Return a list of preferred skills.
     """
     #Obtain a list of high frequent skills used to filter the preferred skills.
-    with open('skill_set', 'r') as f:
+    with open('NYC_Official_Jobs/skill_set', 'r') as f:
         Skill_List = [line.rstrip('\n') for line in f]
     PreferredSkill_List  = []
     

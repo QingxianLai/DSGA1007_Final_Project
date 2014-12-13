@@ -14,3 +14,7 @@ class wrong_option_exception(Exception):
 
 class no_related_jobs_exception(Exception):
     pass
+
+
+class id_not_int_exception(Exception):
+    pass

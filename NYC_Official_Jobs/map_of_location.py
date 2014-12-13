@@ -13,8 +13,10 @@ import urllib
 
 
 def plot_the_location_map(df, num, keyword):
+    if len(df) < num:
+        num = len(df)
     df = df[['Job ID', 'Business Title']]
-    geo_map = pd.read_csv('id_geo_location.csv', index_col='Job ID')
+    geo_map = pd.read_csv('NYC_Official_Jobs/id_geo_location.csv', index_col='Job ID')
 
     #===========marker======================================================
     # size:  {tiny, mid, small} 

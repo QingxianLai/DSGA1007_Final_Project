@@ -8,6 +8,7 @@ from exception_list import invalid_ID_Exception
 from Dataloading import Clean_df
 from display_preferred_skill import display_preferred_skill
 
+
 class interested_job_list(Job_data):
 
     def __init__(self, df, kwd):
@@ -29,13 +30,13 @@ class interested_job_list(Job_data):
     def show_job_list(self):
         show_job_infomation_df(self.data)
 
-    def _verify(self, job_id):
-        if not(job_id in  self.data.loc[:, 'Job ID'].values):
-            raise invalid_ID_Exception
-
     def high_demand_skill(self):
         skill_list = display_preferred_skill(self.data)
         return skill_list
+
+    def _verify(self, job_id):
+        if not(job_id in self.data.loc[:, 'Job ID'].values):
+            raise invalid_ID_Exception
 
     def select(self, job_id):
         self._verify(job_id)            # if invalid, raise an exception

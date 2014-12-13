@@ -1,16 +1,20 @@
 import pandas as pd
-
+import warnings
 
 
 def Clean_df(df):
     """
     clean the raw dataset, convert date type drop duplicate, drop invalid entries
 
-    :param df: the raw dataframe
+    argument
+    ========
+    df: the raw dataframe
 
-    :return: a cleaned dataframe
+    return
+    ======
+    a cleaned dataframe
     """
-
+    warnings.filterwarnings('ignore')
     df['Posting Date'] = pd.to_datetime(df['Posting Date'])         # converted to 'date' type
 
     #remove duplicate since some jobs opening to internal and external share the same job id

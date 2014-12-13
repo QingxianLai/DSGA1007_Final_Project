@@ -8,11 +8,13 @@ def safely_input():
     used at the start of main function. safely input the data set from the external csv file.
     Raise exception when input failed
 
-    :return:
-    a dataframe
+    return
+    ======
+    a
+
     """
     print "Welcome! \n"
-    path = "../NYC_Jobs.csv"
+    path = "NYC_Jobs.csv"
     while 1:
         try:
             raw_data = get_input(path)
@@ -27,6 +29,18 @@ def safely_input():
 
 
 def get_input(path):
+    """
+    given a file path, verify the input dataset
+
+    argument
+    ========
+    path: string showing the path of .csv file
+
+    return
+    ======
+    checked dataframe
+
+    """
     df = pd.read_csv(path)
     attri = [u'Job ID', u'Agency', u'Posting Type', u'# Of Positions', u'Business Title', u'Civil Service Title',
              u'Title Code No', u'Level', u'Salary Range From', u'Salary Range To', u'Salary Frequency',

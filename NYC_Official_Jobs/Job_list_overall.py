@@ -4,8 +4,18 @@ from pieplot import plot_educationLevel
 from barplot import *
 from input_filter import filter_the_job
 from Dataloading import Clean_df
+from scotterplot import plot_scatter
 
 class Job_data:
+    """
+    The class of the overall job dataset of New York City.
+
+    Local Variable
+    ==============
+    .data  :  a dataframe contain all the information of NYC Jobs
+    .
+
+    """
 
     def __init__(self, df):
         self.data = df
@@ -24,10 +34,13 @@ class Job_data:
         plot_numPosition(self.data)
 
     def preview_data(self):
-        job_features=['Job ID', 'Business Title', 'Agency']
+        job_features = ['Job ID', 'Business Title', 'Agency']
         df = self.data.loc[:, job_features]
         index = np.random.choice(len(df), size=50)
         print df.iloc[index, :]
+
+    def scotter_level_salary(self):
+        plot_scatter(self.data)
 
     def salary_range(self):
         show_salary_range(self.data)
