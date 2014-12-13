@@ -34,7 +34,7 @@ def display_preferred_skill(df):
     #Obtain a whole preferred skill list of the given job dataframe and sort it from the toppest.
     PreferredSkill_List = sorted(set(PreferredSkill_List), reverse=True)
     
-    return PreferredSkill_List[:15]
+    return PreferredSkill_List
 
 
 def test():

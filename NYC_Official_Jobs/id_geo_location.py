@@ -1,13 +1,21 @@
 import pandas as pd 
 import matplotlib.pyplot as plt
 from Dataloading import * 
-#from matplotlib import mlab
 
 
 
 def recode_civilLevel(df):
     """recodes all the corresponding civil title,
     and returns a new Dataframe with two columns named "Level" and "Salary Range"
+
+    Argument
+    ========
+    df: dataframe 
+
+    return
+    ======
+    Dataframe
+
     """
     df=df[df['Salary Frequency']=='Annual']#limited to full-time positions
     df=df[['Level','Salary Range From','Salary Range To']]#extract the columns we needed
@@ -17,11 +25,24 @@ def recode_civilLevel(df):
                                              'M6': 6,'M7':7,'M8':8,'M9':9,'00':0,'01':1,'02':2,'03':3,
                                              '04':4,'3A':3,'3B':3,'4A':4,'4B':4})
     return mSalary
+
+
+
+
     
 
 def plot_scatter(df):
     """generate a scatter plot and the associated mean line 
         of median salary and job title level
+
+    Argument
+    ========
+    df: dataframe 
+
+    return
+    ======
+    Dataframe
+
     """
     fig = plt.figure(2, figsize=(10,8))
     mSalary=recode_civilLevel(df)
@@ -47,6 +68,9 @@ def plot_scatter(df):
     plt.xlabel('Civil Service Title Level (range from 0 through 9)',fontsize=12)
     
     plt.show()
+
+
+
 
 
 if __name__=="__main__":
