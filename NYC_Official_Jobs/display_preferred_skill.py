@@ -13,13 +13,20 @@ def display_preferred_skill(df):
     """
     Display preferred skills of a job dataframe. The skills are listed from the most preferred to the least preferred.
     Return a list of preferred skills.
+
+    Argument
+    ========
+    df: a job dataframe
+
+    Return
+    ======
+    a list
     """
     #Obtain a list of high frequent skills used to filter the preferred skills.
     with open('NYC_Official_Jobs/skill_set', 'r') as f:
         Skill_List = [line.rstrip('\n') for line in f]
     PreferredSkill_List  = []
-    
-    #Obtain 
+
     for jobID in df['Job ID']:
     #Get the preferred skills description for each job of the dataframe and turn them into strings.
         skill = df[df['Job ID']==jobID]['Preferred Skills']

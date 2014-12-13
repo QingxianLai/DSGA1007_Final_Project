@@ -61,7 +61,8 @@ def overall_analysis(df):
         except wrong_option_exception:
             print "invalid option, please select from [a,b,c,d,e,f,g] or input 'q' to quit: "
         except no_related_jobs_exception:
-            print "Sorry, we cannot find jobs related to your keyword, please try another one: "
+            print "Sorry, we cannot find jobs related to your keyword, please try another one, " \
+                  "or you can input 'p' to go back: "
     return job_list
 
 
@@ -90,7 +91,7 @@ def search_keyword(df):
     jobs. if find, return it as a dataframe or a Series; or raise a exception
 
     Argument
-    =======
+    ========
     df: the whole dataset
 
     Return
