@@ -18,6 +18,10 @@ class interested_job_list(Job_data):
     """
     The class of the user interested job
 
+    parent
+    ======
+    Job_data class
+
     Local Variables
     ==============
     .data  :  a dataframe
