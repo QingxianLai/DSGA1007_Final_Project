@@ -3,24 +3,24 @@ NYC Official Job data Analysis with Visualization
 ======================
 
 ## Table of Contents
-* [How to run the program](#How-to-run-the-program?)
-* [What input the program takes](#what-input-the-program-takes?)
+* [What is it](#what-is-it)
+* [How to run](#how-to-tun)
 * [What output the program produces](#What output the program produces?)
 * [demo](#An typical walk-through example)
 * [some point](#as-some-thing)
 
-####What does the program do? 
+###What is it 
 This program provides user the overall view of NYC Official Job Dataset in the most recent years through Data Visualization and brief job information listing. 
 At the beginning of program, a list of options will be display for user. For example, user could choose to plot a pie that shows the percentage of jobs that needed at least a high school diploma, bachelor degree and master degree. In additions to plotting a graph to visualize the data, user could also choose to search jobs by entering keyword,then choose to learn more about the specific job by using provided job IDs.
 
 
-####How to run the program?
+###How to run
 User could use either Terminal (Mac/Unix/Linux user) or Command Prompt (Window user) run the program. If user uses Mac Terminal, user could just change the terminal directory to directory where the program documents saved, then type ```python main.py``` in Terminal. For window user, user could use Python Launcher for window, assuming user using python 2.7, user could type ```py  main.py``` in the Command Prompt after changing the directory to where the program saved. 
 
-####What input the program takes?
+###Program input
 Program takes options inputs like a, b, c etc. from the option list program provided at the beginning of the program. Program could also take a keyword input from user if user would like to search the job by keyword. 
 
-###What output the program produces?
+###Program output
 Program could generate different kind of plots or even a piece of Google map upon user’s request. In addition, if user searches jobs by using keyword, the program may print out a list of available jobs, or a specific job with important information in detail. 
 
 ### as some thing
