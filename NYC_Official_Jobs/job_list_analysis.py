@@ -1,28 +1,28 @@
-__author__ = 'LaiQX'
+"""
+Author : Qingxian Lai (ql516)
+
+
+"""
 import sys
 from exception_list import *
 from Interested_job_list import interested_job_list, job
-from input_filter import filter_the_job
-import pandas as pd
-from Dataloading import Clean_df
 
 
-def job_list_analysis(df,kwd):
+
+def job_list_analysis(df, kwd):
     """
-    This function used to display an interactive system letting the user to learn more
+    This function build up an interactive system letting the user to learn more
     about his interested jobs. Detail instructions will be shown at the
     beginning of the program.
 
     argument
     =========
     df: a dataframe
-
-    return
-    ======
+    kwd: string
 
     """
 
-    df = interested_job_list(df,kwd)          # turn the data frame into a Interested job list object
+    df = interested_job_list(df, kwd)          # turn the data frame to a Interested job list object
     df.show_job_list()
 
     print_list_operator(df.keyword)
@@ -53,7 +53,17 @@ def job_list_analysis(df,kwd):
             print "invalid option, please select from [m,a,b,c,d,e,f,g] or input 'q' to quit: "
 
 
+
+
 def print_list_operator(kwd):
+    """
+    an user menu show at the beginning of the system
+
+    Argument
+    ========
+    kwd: a string, the keyword user inputted
+
+    """
     print ""
     print "================================  keyword:{}  =========================================".format(kwd)
     print ""
@@ -68,6 +78,7 @@ def print_list_operator(kwd):
     print "              <q>  :  quit the program"
     print ""
     print "==========================================================================================="
+
 
 
 
@@ -91,7 +102,20 @@ def option_input():
     return key
 
 
+
+
 def select_a_job(df):
+    """
+    let the user input a id, then verify it. if Valid, return a job object
+
+    Argument
+    =======
+    df: Dataframe, the job list
+
+    Return:
+    if the input id is valid, return a job object, or raise exception
+
+    """
     while 1:
         try:
             job_id = raw_input("please input a Job ID of which you want to learn details: \n")
@@ -108,7 +132,21 @@ def select_a_job(df):
 
 
 
+
 def select_id_job(id_str):
+    """
+    convert the input string id to integer, if the input is not an integer,
+    raise exception
+
+    Argument
+    ========
+    id_str: the inputted id string
+
+    Return
+    ======
+    integer
+
+    """
     try:
         id = int(id_str)
     except:
@@ -116,8 +154,17 @@ def select_id_job(id_str):
     return id
 
 
-def view_job_info(Job):
 
+
+def view_job_info(Job):
+    """
+    guide the user to learn more about the job:  detailed job descrption or location on the googlemap
+
+    Argument
+    ========
+    Job:  a job object
+
+    """
     print "successfully select job: {}".format(Job.id)
 
     print ""
@@ -144,6 +191,10 @@ def view_job_info(Job):
             print "invalid option, please select from [a,b,q]: "
 
 
+
+
+
+
 def job_key_input():
     """
     get the option selected by user, and verify it.
@@ -158,18 +209,3 @@ def job_key_input():
     if not(key in options):
         raise wrong_option_exception
     return key
-
-
-def test():
-    df = pd.read_csv("../NYC_Jobs.csv")
-    df = Clean_df(df)
-    kwd = "data"
-    job_list = filter_the_job(df,kwd)
-    job_list_analysis(job_list,kwd)
-
-
-if __name__ == "__main__":
-    try:
-        test()
-    except KeyboardInterrupt:
-        sys.exit()

@@ -1,8 +1,9 @@
-'''
-Created on Dec 12, 2014
+"""
+function used to get the most demanded skills
 
-@author: keye
-'''
+Author: Ke Ye (ky822)
+
+"""
 
 import pandas as pd
 from input_filter import filter_the_job
@@ -42,16 +43,3 @@ def display_preferred_skill(df):
     PreferredSkill_List = sorted(set(PreferredSkill_List), reverse=True)
     
     return PreferredSkill_List
-
-
-def test():
-    df = pd.read_csv("../NYC_Jobs.csv")
-    df = Clean_df(df)
-    keyword = 'manager'
-    job_list = filter_the_job(df,keyword)
-    result = display_preferred_skill(job_list)
-    print result
-
-
-if __name__ == "__main__":
-    test()

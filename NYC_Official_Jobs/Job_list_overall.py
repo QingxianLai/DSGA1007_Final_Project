@@ -1,19 +1,36 @@
-import pandas as pd
+"""
+The overall data set class
+
+Author: Qingxian Lai (ql516)
+
+"""
 import numpy as np
 from pieplot import plot_educationLevel
 from barplot import *
 from input_filter import filter_the_job
-from Dataloading import Clean_df
 from scotterplot import plot_scatter
+
+
 
 class Job_data:
     """
     The class of the overall job dataset of New York City.
 
-    Local Variable
+    Local Variables
     ==============
-    data  :  a dataframe contain all the information of NYC Jobs
-    
+    .data  :  a dataframe contain all the information of NYC Jobs
+    .attribute : a numpyt ndarray contain all the attributes of the dataset
+
+    Methods
+    =======
+    .__init__              :  initialize the object
+    .degree_pei_plot       :  pie plot showing the percentage of degree reguirement
+    .top_demanding_jobs    :  bar plot showing the top demanding jobs
+    .num_of_job_by_date    :  the number of jobs
+    .top_ten_agency        :  bar plot showing top recruiting agencies
+    .preview_data          :  randomly show part of the dataset
+    .scotter_level_salary  :  scotter plot show the relation b/t level and salary
+    .keyword_filter        :  match inputted keyword with dataset
 
     """
 
@@ -46,30 +63,21 @@ class Job_data:
         show_salary_range(self.data)
 
     def keyword_filter(self, keyword):
+        """
+        match inputted keyword with dataset
+
+        Argument
+        ========
+        keyword: String
+
+        Return
+        ======
+        a dataframe
+
+        """
         df = filter_the_job(self.data, keyword)
         return df
 
     def __repr__(self):
         return "NYC_OFFICIAL_JOB_DATASET Object"
 
-
-
-
-
-
-
-def class_test():
-    df = pd.read_csv("../NYC_Jobs.csv")
-    df = Clean_df(df)
-    nyc_job_data = Job_data(df)
-    nyc_job_data.degree_pie_plot()
-#    nyc_job_data.top_demanding_jobs()
-#    nyc_job_data.top_ten_agency()
-#    nyc_job_data.num_of_job_by_date()
-    nyc_job_data.preview_data()
-#    keyword = 'manager'
-#    job_list = filter_the_job(df, keyword)
-
-
-if __name__ == "__main__":
-    class_test()

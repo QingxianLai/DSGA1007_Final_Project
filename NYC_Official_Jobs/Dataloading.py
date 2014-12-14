@@ -1,3 +1,10 @@
+"""
+function used to clean the raw dataset
+
+Author: Jianming Zhou (jz1584)
+
+"""
+
 import pandas as pd
 import warnings
 
@@ -13,6 +20,7 @@ def Clean_df(df):
     return
     ======
     a cleaned dataframe
+
     """
     warnings.filterwarnings('ignore')
     df['Posting Date'] = pd.to_datetime(df['Posting Date'])         # converted to 'date' type

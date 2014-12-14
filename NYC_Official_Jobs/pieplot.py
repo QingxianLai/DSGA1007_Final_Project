@@ -1,7 +1,25 @@
+"""
+pie plot
+
+Author: Jianming Zhou (jz1584)
+
+"""
+
 import matplotlib.pyplot as plt
 
-def plot_educationLevel(df):
 
+
+
+def plot_educationLevel(df):
+    """
+    Function takes dataframe as input,
+    plot a pie of
+
+    Argument
+    ========
+    DataFrame
+
+    """
 
     degree=degreeDict(df)
     bach=degree['Bachelor']
@@ -18,15 +36,28 @@ def plot_educationLevel(df):
     plt.title('Minimum Degree Requirement', fontsize=20)
     plt.show()
 
+
+
+
+
 def degreeDict(dataframe):
     """
     takes the dataframe as input,
     returns a dictionary  with key: Degree,  Values: total number of available jobs
+
+    Argumrnt
+    ========
+    dataframe
+
+    Return
+    ======
+    a dictionary
+
     """
 
     df=dataframe.set_index('Job ID')                        #set the Job ID be the index of dataframe
     df1=df['Minimum Qual Requirements'].dropna()            #remove null value
-    position= df['# Of Positions']
+    position = df['# Of Positions']
     degree={}
     #initialize degree dictionary
     degree['Bachelor']=0

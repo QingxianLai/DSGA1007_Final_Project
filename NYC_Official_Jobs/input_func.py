@@ -1,4 +1,9 @@
-__author__ = 'LaiQX'
+"""
+checking the loaded dataset
+
+Author: Qingxian Lai (ql516)
+
+"""
 import pandas as pd
 import sys
 from exception_list import *
@@ -10,7 +15,7 @@ def safely_input():
 
     return
     ======
-    a
+    a verified DataFrame
 
     """
     print "Welcome! \n"

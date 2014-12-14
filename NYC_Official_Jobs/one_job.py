@@ -1,9 +1,21 @@
-__author__ = 'LaiQX'
+"""
+Author: Qingxian Lai (ql516)
+
+"""
 import sys
 from exception_list import *
 from Interested_job_list import job
 
 def one_job_info(Job):
+    """
+    This function used to display an interactive system letting the user to learn more
+    about the only one job.
+
+    argument
+    =========
+    df: a pandas Series with attributes as its index
+
+    """
 
     Job = job(Job)         #turn it into a object
     print "successfully select job: {}".format(Job.id)

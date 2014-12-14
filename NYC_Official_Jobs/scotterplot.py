@@ -1,12 +1,27 @@
-import pandas as pd 
+"""
+scotter plot functions
+
+Author: Jianming Zhou (jz1584)
+
+"""
 import matplotlib.pyplot as plt
-from Dataloading import *
 import warnings
+
+
+
 
 def recode_civilLevel(df):
     """
     recodes all the corresponding civil title,
     and returns a new Dataframe with two columns named "Level" and "Salary Range"
+
+    Argument
+    =======
+    DataFrame
+
+    Return
+    ======
+    DataFrame
     """
 
     df = df[df['Salary Frequency'] == 'Annual']                 #limited to full-time positions
@@ -19,10 +34,17 @@ def recode_civilLevel(df):
     return mSalary
     
 
+
+
 def plot_scatter(df):
     """
     generate a scatter plot and the associated mean line
     of median salary and job title level
+
+    Argument
+    ========
+    Dataframe
+
     """
     warnings.filterwarnings('ignore')
     fig = plt.figure(2, figsize=(10, 8))
@@ -52,8 +74,3 @@ def plot_scatter(df):
     
     plt.show()
 
-
-if __name__== "__main__":
-    df = pd.read_csv("../NYC_Jobs.csv")
-    df = Clean_df(df)
-    plot_scatter(df)

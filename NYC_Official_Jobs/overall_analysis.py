@@ -1,11 +1,11 @@
-__author__ = 'LaiQX'
+"""
+Author: Qingxian Lai (ql516)
+
+"""
 import sys
 from exception_list import *
 from Job_list_overall import Job_data
 from input_filter import filter_the_job
-import pandas as pd
-from Dataloading import Clean_df
-
 
 def overall_analysis(df):
     """
@@ -105,17 +105,3 @@ def search_keyword(df):
         raise no_related_jobs_exception
     return job_list, keyword
 
-
-def test():
-    """
-    test the class and its methods
-
-    """
-    df = pd.read_csv("../NYC_Jobs.csv")
-    df = Clean_df(df)
-    job_list = overall_analysis(df)
-    print job_list
-
-
-if __name__ == "__main__":
-    test()
