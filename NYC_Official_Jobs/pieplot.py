@@ -7,9 +7,6 @@ Author: Jianming Zhou (jz1584)
 
 import matplotlib.pyplot as plt
 
-
-
-
 def plot_educationLevel(df):
     """
     Function takes dataframe as input,
@@ -27,7 +24,7 @@ def plot_educationLevel(df):
     others=degree['High School or others non-degree']
     labels = 'At least \n a Bachelor degree', 'At least\n   A Master \n degree','Others:\nHigh school \nDiploma or \nSome experiences '
     fracs = [bach, master, others]
-    plt.figure(figsize=(9,9))
+    plt.figure(figsize=(12,8))
     explode = (0.05, 0.05, 0.05)
     colors = ['yellowgreen', 'gold', 'lightskyblue', 'lightcoral']
     plt.pie(fracs,explode=explode, colors=colors, autopct='%1.1f%%', shadow=True, startangle=90)

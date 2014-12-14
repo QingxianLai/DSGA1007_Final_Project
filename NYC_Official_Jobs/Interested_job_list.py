@@ -117,7 +117,6 @@ class job:
     .description :  showing the detailed information about this job
     .location    :  showing this job's location on a map
 
-
     """
     def __init__(self,job):
         self.data = job                 # job should be a pandas Series with attributes as its index

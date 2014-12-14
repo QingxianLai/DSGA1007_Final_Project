@@ -29,7 +29,7 @@ class Job_data:
     .num_of_job_by_date    :  the number of jobs
     .top_ten_agency        :  bar plot showing top recruiting agencies
     .preview_data          :  randomly show part of the dataset
-    .scotter_level_salary  :  scotter plot show the relation b/t level and salary
+    .scotter_level_salary  :  scatter plot show the relation b/t level and salary
     .keyword_filter        :  match inputted keyword with dataset
 
     """

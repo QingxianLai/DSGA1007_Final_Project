@@ -1,15 +1,34 @@
+"""
+Author : Qingxian Lai (ql516)
+"""
 import pandas as pd
 from input_filter import filter_the_job
 import re
 
 
 def show_job_infomation_df(df):
+    """
+    show the interestd job list
+
+    Argument
+    ========
+    df: DataFrame
+
+    """
     job_features = ['Job ID', 'Business Title']
     df2 = df.loc[:, job_features]
     df3 = df2.set_index('Job ID')
     print df3
 
 def show_job_infomation_s(series):
+    """
+    show detailed information of a job
+
+    Argument
+    ========
+    panda series
+
+    """
     for i in list(series.index)[:13]:
         print i,':   ',series[i],'\n'
 
@@ -40,17 +59,6 @@ def show_job_infomation_s(series):
     for i in list(series.index)[18:]:
         print i,':   ',series[i],'\n'
 
-def test():
-     df = pd.read_csv("../NYC_Jobs.csv")
-     a_job = df.iloc[15,:]
-     #show_job_infomation_s(a_job)
-     keyword = 'code'
-     job_list = filter_the_job(df,keyword)
-     show_job_infomation_df(job_list)
-
-
-if __name__ == "__main__":
-    test()
     
     
     

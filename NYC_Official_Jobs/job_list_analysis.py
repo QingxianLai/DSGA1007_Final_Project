@@ -46,6 +46,10 @@ def job_list_analysis(df, kwd):
                 print skill_list
             if key == 'g':
                 cjob = select_a_job(df)
+                if cjob == 'b':
+                    df.show_job_list()
+                    print_list_operator(df.keyword)
+                    continue
                 view_job_info(cjob)
                 df.show_job_list()
                 print_list_operator(df.keyword)
@@ -120,7 +124,7 @@ def select_a_job(df):
         try:
             job_id = raw_input("please input a Job ID of which you want to learn details: \n")
             if job_id == 'b':
-                break
+                return 'b'
             id = select_id_job(job_id)
             Job = df.select(id)
             break

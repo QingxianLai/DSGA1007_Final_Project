@@ -32,7 +32,7 @@ def overall_analysis(df):
     print "              <b>  :  bar plot show the most hiring agency"
     print "              <c>  :  bar plot show the most demanded positions"
     print "              <d>  :  line plot of the number of job vs date"
-    print "              <e>  :  scotter plot show the relationship b/t level and salary"
+    print "              <e>  :  scatter plot show the relationship b/t level and salary"
     print "              <f>  :  get a preview about the whole dataset"
     print "              <g>  :  search for a keyword about jobs you interested in"
     print "              <q>  :  quit the program"
