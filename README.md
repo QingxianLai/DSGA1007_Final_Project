@@ -1,21 +1,34 @@
 DS-GA1007 Final Project User Guide
 NYC Official Job data Analysis with Visualization 
 ======================
+## Team Memeber
+- Qingxian Lai (ql516)
+- Jianming Zhou (jz1584))
+- Ke Ye (ky822)
 
 ## Table of Contents
 * [What is it](#what-is-it)
-* [How to run](#how-to-tun)
-* [What output the program produces](#What output the program produces?)
-* [demo](#An typical walk-through example)
-* [some point](#as-some-thing)
+* [How to run](#how-to-run)
+* [Program input](#program-input)
+* [Program output](#program-output)
+* [Dependencies](#dependencies)
+* [Demo](#an-typical-walk-through-example)
+
 
 ###What is it 
 This program provides user the overall view of NYC Official Job Dataset in the most recent years through Data Visualization and brief job information listing. 
-At the beginning of program, a list of options will be display for user. For example, user could choose to plot a pie that shows the percentage of jobs that needed at least a high school diploma, bachelor degree and master degree. In additions to plotting a graph to visualize the data, user could also choose to search jobs by entering keyword,then choose to learn more about the specific job by using provided job IDs.
-
 
 ###How to run
-User could use either Terminal (Mac/Unix/Linux user) or Command Prompt (Window user) run the program. If user uses Mac Terminal, user could just change the terminal directory to directory where the program documents saved, then type ```python main.py``` in Terminal. For window user, user could use Python Launcher for window, assuming user using python 2.7, user could type ```py  main.py``` in the Command Prompt after changing the directory to where the program saved. 
+For Mac User: Use the terminal, change the directory where the main function located, then type:
+
+~~~
+python main.py
+~~~
+For Windows User: use Command Prompt, change the directory where the main function located, then type:
+
+~~~
+py main.py
+~~~
 
 ###Program input
 Program takes options inputs like a, b, c etc. from the option list program provided at the beginning of the program. Program could also take a keyword input from user if user would like to search the job by keyword. 
@@ -23,46 +36,68 @@ Program takes options inputs like a, b, c etc. from the option list program prov
 ###Program output
 Program could generate different kind of plots or even a piece of Google map upon user’s request. In addition, if user searches jobs by using keyword, the program may print out a list of available jobs, or a specific job with important information in detail. 
 
-### as some thing
+###Dependencies
+
+* [NumPy](http://www.numpy.org): 1.7.0 or higher
+* [Pandas](http://pandas.pydata.org/): 0.15.0 or higher
+* [matplotlib](http://matplotlib.sourceforge.net/): 1.3.1 or higher
+* [PIL](http://www.pythonware.com/products/pil/): or you can use [Image](http://effbot.org/imagingbook/image.htm) package
+
+All these package can be easily installed with `pip`:
+
+~~~
+$ pip install [The package name]
+~~~
+
+Or Updated with command:
+
+~~~
+$ pip install -U [The package name]
+~~~
+
 
 ###An typical walk-through example
-```
-	The following example is demonstrated in Mac Terminal.
-	Assuming your terminal has changed to the directory where the program saved
-	and has python 2.7 available.
-```
-1.	To run the program just type `python main.py` in terminal
-2.	Content will be displayed as following: 
-![Alt text](elements/1.jpg)
 
-3.	From the options list above, assuming you want to know which government agencies hire the most,then we could select `b`. Then the bar-plot will pop-up: 
-![Alt text](elements/2.jpg)
+1.At the beginning of the program, you will see an option list:
 
-4.Since the vertical labels may not display properly above, you may want to click![Alt text](elements/3.jpg)in the bottom middle to adjust the display of graph.to have![Alt text](elements/4.jpg)   
+![menu1](elements/1.png =650x)
 
-5.If you want to return to the program, just close the plot-image
+2.Choose one you interested in; suppose you want to know total number of official jobs over the date, you could type `d`. Then the line-plot will pop-up: 
 
-6.After that, we could also search for jobs by entering a keyword:
+![line plot](elements/2.png =650x)
 
-	First select `g`, the program will ask you for a keyword input 
-	assuming that you type a keyword like `data`, the list of available jobs with job ID will be displayed as following:
-![Alt text](elements/5.jpg)
-![Alt text](elements/6.jpg)
+Close the plot window to go back
 
-If you want to get more information about a specific job, select`g`again,
-then the program will ask you input a job ID from the above list. 
+3.After that, we could also search for jobs by entering a keyword, you should first select `g` to change to a searching mode, then type your keyword, say, "manager". A list of available jobs will displayed on the screen with their job ID and business title:
 
-Let see you are interested in a position like `Database Administrator`
-![Alt text](elements/7.jpg) 
+![list of available jobs](elements/3.png =650x)
 
-Just enter the corresponding job id: `146208`
-then you would see:
-![Alt text](elements/8.jpg) 
+At the end of this list, you will see a menu showing all the option with which you can explore the job list:
 
-For those people whose are more conerned about where is the job located,by entering `b`
-they may see A piece of Google map will pop up like:
-![Alt text](elements/9.jpg) 
+![job list menu](elements/4.png =650x)
 
-After you close the map, you can chose `q` back to job list, then `q` again to quit the program. 
-![Alt text](elements/10.jpg) 
+4.For example, you want to see all these jobs' location on a google map, you can type `m`. Then a map will pop up:
+
+![list map](elements/5.png =650x)
+
+Remember to close the image window to move on
+
+5.If you want to get more information about a specific job, select `g`, then as the prompt instrunction says, type a job id of which job you want to learn more. For example, we select the job Id `142484`. It will pop a new menu:
+
+![one job menu](elements/7.png =650x)
+
+You can either select a to show the detailed infomation or select b to show its location on the map. If you want go back to the job list and explore other jobs or plot, just input `q` to go back
+
+6.Then you may want to know the percentage of different degree requirment. Then type `a`, a pie plot will pop up:
+
+![pie plot](elements/6.png =650x)
+
+7.When you decide to end this program, input `q`. Then the whole program will end.
+
+
+
+
+
+
+
 
