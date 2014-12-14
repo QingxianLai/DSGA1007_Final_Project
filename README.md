@@ -62,7 +62,7 @@ $ pip install -U [The package name]
 
 ![menu1](elements/1.png?raw=true =650x)
 
-2.Choose one you interested in; suppose you want to know total number of official jobs over the date, you could type `d`. Then the line-plot will pop-up: 
+2.Choose one you interested in; suppose you want to know the relationship between civil level and base salaries, you could type `d`. Then the line-plot will pop-up: 
 
 ![line plot](elements/2.png?raw=true =650x)
 
