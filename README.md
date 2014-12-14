@@ -1,26 +1,33 @@
-DSGA1007 Final Project 
-Program User Guide
+DS-GA1007 Final Project User Guide
+NYC Official Job data Analysis with Visualization 
 ======================
-###Program Name: NYC Official Job data Analysis with Visualization 
 
-#####What does the program do? 
+## Table of Contents
+* [How to run the program](#How to run the program?)
+* [What input the program takes](#What input the program takes?)
+* [What output the program produces](#What output the program produces?)
+* [demo](#An typical walk-through example)
+
+####What does the program do? 
 This program provides user the overall view of NYC Official Job Dataset in the most recent years through Data Visualization and brief job information listing. 
 At the beginning of program, a list of options will be display for user. For example, user could choose to plot a pie that shows the percentage of jobs that needed at least a high school diploma, bachelor degree and master degree. In additions to plotting a graph to visualize the data, user could also choose to search jobs by entering keyword,then choose to learn more about the specific job by using provided job IDs.
 
-#####How to run the program?
-User could use either Terminal (Mac user) or Command Prompt (Window user) run the program. If user uses Mac Terminal, user could just change the terminal directory to directory where the program documents saved, then type `python main.py` in Terminal. For window user, user could use Python Launcher for window, assuming user using python 2.7, user could type `py  main.py` in the Command Prompt after changing the directory to where the program saved. 
 
-#####What input the program takes?
+####How to run the program?
+User could use either Terminal (Mac/Unix/Linux user) or Command Prompt (Window user) run the program. If user uses Mac Terminal, user could just change the terminal directory to directory where the program documents saved, then type ```python main.py``` in Terminal. For window user, user could use Python Launcher for window, assuming user using python 2.7, user could type ```py  main.py``` in the Command Prompt after changing the directory to where the program saved. 
+
+####What input the program takes?
 Program takes options inputs like a, b, c etc. from the option list program provided at the beginning of the program. Program could also take a keyword input from user if user would like to search the job by keyword. 
 
-####What output the program produces?
+###What output the program produces?
 Program could generate different kind of plots or even a piece of Google map upon user’s request. In addition, if user searches jobs by using keyword, the program may print out a list of available jobs, or a specific job with important information in detail. 
 
-####An typical walk-through example
+###An typical walk-through example
+```
 	The following example is demonstrated in Mac Terminal.
 	Assuming your terminal has changed to the directory where the program saved
 	and has python 2.7 available.
-
+```
 1.	To run the program just type `python main.py` in terminal
 2.	Content will be displayed as following: 
 ![Alt text](elements/1.jpg)
