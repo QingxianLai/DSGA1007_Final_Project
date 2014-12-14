@@ -60,7 +60,7 @@ $ pip install -U [The package name]
 
 1.At the beginning of the program, you will see an option list:
 
-![menu1](elements/1.png =650x)
+![menu1](/elements/1.png =650x)
 
 2.Choose one you interested in; suppose you want to know total number of official jobs over the date, you could type `d`. Then the line-plot will pop-up: 
 
