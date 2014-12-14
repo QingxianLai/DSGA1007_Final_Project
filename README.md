@@ -7,6 +7,7 @@ NYC Official Job data Analysis with Visualization
 * [What input the program takes](#what-input-the-program-takes?)
 * [What output the program produces](#What output the program produces?)
 * [demo](#An typical walk-through example)
+* [some point](#as-some-thing)
 
 ####What does the program do? 
 This program provides user the overall view of NYC Official Job Dataset in the most recent years through Data Visualization and brief job information listing. 
@@ -21,6 +22,8 @@ Program takes options inputs like a, b, c etc. from the option list program prov
 
 ###What output the program produces?
 Program could generate different kind of plots or even a piece of Google map upon user’s request. In addition, if user searches jobs by using keyword, the program may print out a list of available jobs, or a specific job with important information in detail. 
+
+### as some thing
 
 ###An typical walk-through example
 ```
