@@ -3,8 +3,8 @@ NYC Official Job data Analysis with Visualization
 ======================
 
 ## Table of Contents
-* [How to run the program](#How to run the program?)
-* [What input the program takes](#What input the program takes?)
+* [How to run the program](#How-to-run-the-program?)
+* [What input the program takes](#what-input-the-program-takes?)
 * [What output the program produces](#What output the program produces?)
 * [demo](#An typical walk-through example)
 
