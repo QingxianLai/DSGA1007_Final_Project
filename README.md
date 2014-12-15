@@ -62,7 +62,7 @@ $ pip install -U [The package name]
 
 ![menu1](elements/1.png?raw=true =650x)
 
-2.Choose one you interested in; suppose you want to know total number of official jobs over the date, you could type `d`. Then the line-plot will pop-up: 
+2.Choose one you interested in; suppose you want to know the relationship between civil level and base salaries, you could type `d`. Then the scatter-plot will pop up: 
 
 ![line plot](elements/2.png?raw=true =650x)
 
@@ -78,7 +78,7 @@ At the end of this list, you will see a menu showing all the option with which y
 
 4.For example, you want to see all these jobs' location on a google map, you can type `m`. Then a map will pop up:
 
-![list map](elements/5.png =650x)
+![list map](elements/5.png?raw=true =650x)
 
 Remember to close the image window to move on
 
