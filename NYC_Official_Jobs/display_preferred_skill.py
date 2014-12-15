@@ -43,4 +43,9 @@ def display_preferred_skill(df):
     #Obtain a whole preferred skill list of the given job dataframe and sort it from the toppest.
     PreferredSkill_List = sorted(set(PreferredSkill_List), reverse=True)
     
-    return PreferredSkill_List
+    if len(PreferredSkill_List)==0:
+        print "Sorry, there isn't any popular demanded skill can be found!"
+    else:
+        #Obtain a whole preferred skill list of the given job dataframe and sort it from the toppest.
+        PreferredSkill_List = sorted(set(PreferredSkill_List), reverse=True)
+        return PreferredSkill_List[:15]
