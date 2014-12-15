@@ -33,6 +33,7 @@ def display_preferred_skill(df):
         skill = df[df['Job ID']==jobID]['Preferred Skills']
         skill = str(skill.tolist())
         #Obtain a preferred skill list of a certain job.
+        ContainedSkill = []
         ContainedSkill_List = []
         for word in Skill_List:
             if (word in skill)==1:

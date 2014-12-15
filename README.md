@@ -60,21 +60,21 @@ $ pip install -U [The package name]
 
 1.At the beginning of the program, you will see an option list:
 
-![menu1](elements/1.png =650x)
+![menu1](elements/1.png?raw=true =650x)
 
 2.Choose one you interested in; suppose you want to know total number of official jobs over the date, you could type `d`. Then the line-plot will pop-up: 
 
-![line plot](elements/2.png =650x)
+![line plot](elements/2.png?raw=true =650x)
 
 Close the plot window to go back
 
 3.After that, we could also search for jobs by entering a keyword, you should first select `g` to change to a searching mode, then type your keyword, say, "manager". A list of available jobs will displayed on the screen with their job ID and business title:
 
-![list of available jobs](elements/3.png =650x)
+![list of available jobs](elements/3.png?raw=true =650x)
 
 At the end of this list, you will see a menu showing all the option with which you can explore the job list:
 
-![job list menu](elements/4.png =650x)
+![job list menu](elements/4.png?raw=true =650x)
 
 4.For example, you want to see all these jobs' location on a google map, you can type `m`. Then a map will pop up:
 
@@ -84,13 +84,13 @@ Remember to close the image window to move on
 
 5.If you want to get more information about a specific job, select `g`, then as the prompt instrunction says, type a job id of which job you want to learn more. For example, we select the job Id `142484`. It will pop a new menu:
 
-![one job menu](elements/7.png =650x)
+![one job menu](elements/7.png?raw=true =650x)
 
 You can either select a to show the detailed infomation or select b to show its location on the map. If you want go back to the job list and explore other jobs or plot, just input `q` to go back
 
 6.Then you may want to know the percentage of different degree requirment. Then type `a`, a pie plot will pop up:
 
-![pie plot](elements/6.png =650x)
+![pie plot](elements/6.png?raw=true =650x)
 
 7.When you decide to end this program, input `q`. Then the whole program will end.
 
